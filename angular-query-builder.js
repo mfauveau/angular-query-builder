@@ -32,8 +32,6 @@ var queryBuilder = angular.module('queryBuilder', []);
 queryBuilder.directive('queryBuilder', ['$compile', function ($compile) {
     return {
         restrict: 'E',
-        transclude: true,
-        replace: true,
         scope: {
             group: '='
         },
@@ -91,9 +89,7 @@ queryBuilder.directive('queryBuilder', ['$compile', function ($compile) {
 
                 directive || (directive = $compile(content));
 
-                element.append(directive(scope, function ($compile) {
-                    return $compile;
-                }));
+                element.append(directive(scope));
             }
         }
     }
