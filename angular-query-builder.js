@@ -89,7 +89,9 @@ queryBuilder.directive('queryBuilder', ['$compile', function ($compile) {
 
                 directive || (directive = $compile(content));
 
-                element.append(directive(scope));
+                element.append(directive(scope, function ($compile) {
+                    return $compile;
+                }));
             }
         }
     }
