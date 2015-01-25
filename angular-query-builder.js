@@ -31,7 +31,7 @@ app.controller('QueryBuilderCtrl', ['$scope', function ($scope) {
 var queryBuilder = angular.module('queryBuilder', []);
 queryBuilder.directive('queryBuilder', ['$compile', function ($compile) {
     return {
-        restrict: 'E',
+        restrict: 'A',
         scope: {
             group: '='
         },
